@@ -8,8 +8,8 @@
 import Foundation
 
 struct Meta: Codable {
-    let updatedAt: String
-    let units: Unit
+    let updatedAt: String?
+    let units: Unit?
     
     enum CodingKeys: String, CodingKey {
         case updatedAt = "updated_at"
@@ -18,8 +18,8 @@ struct Meta: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        updatedAt = try values.decode(String.self, forKey: .updatedAt)
-        units = try values.decode(Unit.self, forKey: .units)
+        updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
+        units = try values.decodeIfPresent(Unit.self, forKey: .units)
         
     }
 }

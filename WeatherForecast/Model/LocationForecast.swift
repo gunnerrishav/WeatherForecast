@@ -8,8 +8,8 @@
 import Foundation
 
 struct LocationForecast: Codable {
-    let type: String
-    let properties: Properties
+    let type: String?
+    let properties: Properties?
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -18,8 +18,8 @@ struct LocationForecast: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        type = try values.decode(String.self, forKey: .type)
-        properties = try values.decode(Properties.self, forKey: .properties)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+        properties = try values.decodeIfPresent(Properties.self, forKey: .properties)
         
     }
 }

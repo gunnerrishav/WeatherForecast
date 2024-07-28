@@ -8,8 +8,8 @@
 import Foundation
 
 struct Properties: Codable {
-    let meta: Meta
-    let timeseries: [TimeSeries]
+    let meta: Meta?
+    let timeseries: [TimeSeries]?
     
     enum CodingKeys: String, CodingKey {
         case meta
@@ -18,8 +18,8 @@ struct Properties: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        meta = try values.decode(Meta.self, forKey: .meta)
-        timeseries = try values.decode([TimeSeries].self, forKey: .timeseries)
+        meta = try values.decodeIfPresent(Meta.self, forKey: .meta)
+        timeseries = try values.decodeIfPresent([TimeSeries].self, forKey: .timeseries)
         
     }
 }

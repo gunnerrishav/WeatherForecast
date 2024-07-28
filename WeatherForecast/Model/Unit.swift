@@ -8,13 +8,13 @@
 import Foundation
 
 struct Unit: Codable {
-    let airPressureAtSeaLevel: String
-    let airTemperature: String
-    let cloudAreaFraction: String
-    let precipitationAmmount: String
-    let relativeHumidity: String
-    let windFromDirection: String
-    let windSpeed: String
+    let airPressureAtSeaLevel: String?
+    let airTemperature: String?
+    let cloudAreaFraction: String?
+    let precipitationAmmount: String?
+    let relativeHumidity: String?
+    let windFromDirection: String?
+    let windSpeed: String?
     
     enum CodingKeys: String, CodingKey {
         case airPressureAtSeaLevel = "air_pressure_at_sea_level"
@@ -28,13 +28,13 @@ struct Unit: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        airPressureAtSeaLevel = try values.decode(String.self, forKey: .airPressureAtSeaLevel)
-        airTemperature = try values.decode(String.self, forKey: .airTemperature)
-        cloudAreaFraction = try values.decode(String.self, forKey: .cloudAreaFraction)
-        precipitationAmmount = try values.decode(String.self, forKey: .precipitationAmmount)
-        relativeHumidity = try values.decode(String.self, forKey: .relativeHumidity)
-        windFromDirection = try values.decode(String.self, forKey: .windFromDirection)
-        windSpeed = try values.decode(String.self, forKey: .windSpeed)
+        airPressureAtSeaLevel = try values.decodeIfPresent(String.self, forKey: .airPressureAtSeaLevel)
+        airTemperature = try values.decodeIfPresent(String.self, forKey: .airTemperature)
+        cloudAreaFraction = try values.decodeIfPresent(String.self, forKey: .cloudAreaFraction)
+        precipitationAmmount = try values.decodeIfPresent(String.self, forKey: .precipitationAmmount)
+        relativeHumidity = try values.decodeIfPresent(String.self, forKey: .relativeHumidity)
+        windFromDirection = try values.decodeIfPresent(String.self, forKey: .windFromDirection)
+        windSpeed = try values.decodeIfPresent(String.self, forKey: .windSpeed)
         
     }
 }

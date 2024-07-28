@@ -46,7 +46,7 @@ struct HomeView: View {
         case .loading:
             ProgressView().scaleEffect(2.0)
         case .loaded(let locationForecast):
-            MessageView(message: locationForecast.type)
+            MessageView(message: locationForecast.type ?? "")
         case  .error(let error):
             ErrorView(error: error, retryAction: {
                 viewModel.fetchLocationForecast()
