@@ -19,7 +19,6 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 BackgroundView()
-                ContentView()
                 
                 VStack{
                     content
@@ -37,12 +36,13 @@ struct HomeView: View {
                                 }
                                 
                             }
-                        }.toolbarBackground(.blue.opacity(0.5), for: .navigationBar)
+                        }
+                        .toolbarBackground(.blue.opacity(0.5), for: .navigationBar)
+                    
                 }
                 
             }
-        }
-        
+        }.accentColor(.white)
     }
     
     /// View for homeview
@@ -72,7 +72,8 @@ struct HomeView: View {
         
         return List {
             ForEach(filteredTimeSeries, id: \.time) { time in
-                NavigationLink(destination: DetailView()) {
+                let dayWiseTimeSeries = timeSeries.filter({$0.getFormattedDate() == time.getFormattedDate()})
+                NavigationLink(destination: DetailView(dayWiseTimeSeries: dayWiseTimeSeries)) {
                     DaysCell(timeSeries: time)
                 }
             }.listRowBackground(Color.clear)

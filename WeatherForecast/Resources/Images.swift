@@ -10,4 +10,8 @@ import Foundation
 struct Images {
     static let cloudSunFill = "cloud.sun.fill"
     static let calendar = "calendar"
+    
+    ///weatherIcons
+    static let fairyDay = "fair_day"
+    
 }

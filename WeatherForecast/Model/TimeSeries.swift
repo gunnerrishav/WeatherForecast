@@ -30,14 +30,17 @@ struct TimeSeries: Codable {
 
 struct TimeSeriesData: Codable {
     let instant: Instant?
+    let nextOneHours: NextOneHours?
     
     enum CodingKeys: String, CodingKey {
         case instant
+        case nextOneHours = "next_1_hours"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         instant = try values.decodeIfPresent(Instant.self, forKey: .instant)
+        nextOneHours = try values.decodeIfPresent(NextOneHours.self, forKey: .nextOneHours)
     }
 }
 
@@ -51,5 +54,31 @@ struct Instant: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         details = try values.decodeIfPresent(Detail.self, forKey: .details)
+    }
+}
+
+struct NextOneHours: Codable {
+    let summary: Summary?
+    
+    enum CodingKeys: String, CodingKey {
+        case summary
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        summary = try values.decodeIfPresent(Summary.self, forKey: .summary)
+    }
+}
+
+struct Summary: Codable {
+    let symbolCode: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case symbolCode = "symbol_code"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        symbolCode = try values.decodeIfPresent(String.self, forKey: .symbolCode)
     }
 }

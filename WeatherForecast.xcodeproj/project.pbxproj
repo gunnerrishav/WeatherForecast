@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071FEADB2C579D6E0008AF10 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FEADA2C579D6E0008AF10 /* DetailViewModel.swift */; };
+		071FEADE2C57A7990008AF10 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FEADD2C57A7990008AF10 /* TimeCell.swift */; };
 		073F39512C56C33E004234CD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F39502C56C33E004234CD /* LocationManager.swift */; };
 		078865032C563559007D974C /* WeatherForecastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865022C563559007D974C /* WeatherForecastApp.swift */; };
 		078865052C563559007D974C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865042C563559007D974C /* ContentView.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071FEADA2C579D6E0008AF10 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		071FEADD2C57A7990008AF10 /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		073F39502C56C33E004234CD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		078864FF2C563559007D974C /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078865022C563559007D974C /* WeatherForecastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastApp.swift; sourceTree = "<group>"; };
@@ -115,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071FEADC2C579EC30008AF10 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				071FEADD2C57A7990008AF10 /* TimeCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		078864F62C563559007D974C = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +288,9 @@
 		078865612C56A619007D974C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				071FEADC2C579EC30008AF10 /* CustomViews */,
 				078865622C56A63E007D974C /* DetailView.swift */,
+				071FEADA2C579D6E0008AF10 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -424,8 +438,10 @@
 				078865322C563A26007D974C /* APICall.swift in Sources */,
 				078865502C566CCB007D974C /* LocationForecast.swift in Sources */,
 				0788653B2C5640AC007D974C /* MessageView.swift in Sources */,
+				071FEADB2C579D6E0008AF10 /* DetailViewModel.swift in Sources */,
 				078865592C56764B007D974C /* HomeView.swift in Sources */,
 				078865532C566D10007D974C /* Properties.swift in Sources */,
+				071FEADE2C57A7990008AF10 /* TimeCell.swift in Sources */,
 				0788653E2C564159007D974C /* BaseViewModel.swift in Sources */,
 				078865392C564098007D974C /* ErrorView.swift in Sources */,
 				0788654E2C566C1D007D974C /* LocationForecastManager.swift in Sources */,

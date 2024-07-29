@@ -12,6 +12,7 @@ enum DateTimeFormats: String{
     case yyyyMMddTHHmmSSZ = "yyyy-MM-dd'T'HH:mm:SSZ"
     case MMMdyyyy = "MMM d, yyyy"
     case EEEddMMMyyyy = "EEE dd MMM, yyyy"
+    case hhmma = "hh:mm a"
 }
 
 class DateTimeUtils {
