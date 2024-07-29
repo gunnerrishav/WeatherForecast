@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073F39512C56C33E004234CD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F39502C56C33E004234CD /* LocationManager.swift */; };
 		078865032C563559007D974C /* WeatherForecastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865022C563559007D974C /* WeatherForecastApp.swift */; };
 		078865052C563559007D974C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865042C563559007D974C /* ContentView.swift */; };
 		078865072C56355D007D974C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078865062C56355D007D974C /* Assets.xcassets */; };
@@ -31,6 +32,10 @@
 		078865552C5673FF007D974C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865542C5673FF007D974C /* HomeViewModel.swift */; };
 		078865592C56764B007D974C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865582C56764B007D974C /* HomeView.swift */; };
 		0788655B2C569C5A007D974C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788655A2C569C5A007D974C /* BackgroundView.swift */; };
+		0788655E2C56A1B5007D974C /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788655D2C56A1B5007D974C /* DaysCell.swift */; };
+		078865602C56A2C6007D974C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788655F2C56A2C6007D974C /* Images.swift */; };
+		078865632C56A63E007D974C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865622C56A63E007D974C /* DetailView.swift */; };
+		078865652C56AFFE007D974C /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078865642C56AFFE007D974C /* DateTimeUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073F39502C56C33E004234CD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		078864FF2C563559007D974C /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078865022C563559007D974C /* WeatherForecastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastApp.swift; sourceTree = "<group>"; };
 		078865042C563559007D974C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +84,10 @@
 		078865542C5673FF007D974C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		078865582C56764B007D974C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0788655A2C569C5A007D974C /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		0788655D2C56A1B5007D974C /* DaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCell.swift; sourceTree = "<group>"; };
+		0788655F2C56A2C6007D974C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		078865622C56A63E007D974C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		078865642C56AFFE007D974C /* DateTimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				078865062C56355D007D974C /* Assets.xcassets */,
+				0788655F2C56A2C6007D974C /* Images.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0788652E2C5639C1007D974C /* URL.swift */,
+				078865642C56AFFE007D974C /* DateTimeUtils.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -229,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0788654D2C566C1D007D974C /* LocationForecastManager.swift */,
+				073F39502C56C33E004234CD /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -237,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				0788654C2C566B85007D974C /* Home */,
+				078865612C56A619007D974C /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -244,10 +258,27 @@
 		0788654C2C566B85007D974C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0788655C2C56A193007D974C /* CustomViews */,
 				078865582C56764B007D974C /* HomeView.swift */,
 				078865542C5673FF007D974C /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0788655C2C56A193007D974C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0788655D2C56A1B5007D974C /* DaysCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		078865612C56A619007D974C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				078865622C56A63E007D974C /* DetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,9 +414,13 @@
 				078865552C5673FF007D974C /* HomeViewModel.swift in Sources */,
 				078865432C56424A007D974C /* Unit.swift in Sources */,
 				078865362C563E0F007D974C /* APIManager.swift in Sources */,
+				078865652C56AFFE007D974C /* DateTimeUtils.swift in Sources */,
 				078865452C564399007D974C /* Detail.swift in Sources */,
 				078865052C563559007D974C /* ContentView.swift in Sources */,
+				078865632C56A63E007D974C /* DetailView.swift in Sources */,
 				078865032C563559007D974C /* WeatherForecastApp.swift in Sources */,
+				0788655E2C56A1B5007D974C /* DaysCell.swift in Sources */,
+				078865602C56A2C6007D974C /* Images.swift in Sources */,
 				078865322C563A26007D974C /* APICall.swift in Sources */,
 				078865502C566CCB007D974C /* LocationForecast.swift in Sources */,
 				0788653B2C5640AC007D974C /* MessageView.swift in Sources */,
@@ -396,6 +431,7 @@
 				0788654E2C566C1D007D974C /* LocationForecastManager.swift in Sources */,
 				0788652F2C5639C1007D974C /* URL.swift in Sources */,
 				078865472C564768007D974C /* TimeSeries.swift in Sources */,
+				073F39512C56C33E004234CD /* LocationManager.swift in Sources */,
 				078865412C564235007D974C /* Meta.swift in Sources */,
 				0788655B2C569C5A007D974C /* BackgroundView.swift in Sources */,
 				078865342C563B2F007D974C /* UserRouter.swift in Sources */,
@@ -487,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -544,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -565,11 +601,16 @@
 				DEVELOPMENT_TEAM = N69UX37RZ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is used to provide local weather updates.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Your location is used to provide local weather updates.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide local weather updates.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,11 +635,16 @@
 				DEVELOPMENT_TEAM = N69UX37RZ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is used to provide local weather updates.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Your location is used to provide local weather updates.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide local weather updates.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,6 +8,8 @@
 import Foundation
 
 class HomeViewModel: BaseViewModel {
+    /// holds latitude and longitude of the device
+    let latitude, longitude: Double?
     
     /// holds the state and data of locationForecast
     @Published var locationForecast: LoadingState<LocationForecast> = .idle
@@ -15,7 +17,9 @@ class HomeViewModel: BaseViewModel {
     /// holds instance of locationForecast manager for API Call
     let locationForecastManager = LocationForecastManager.shared
     
-    override init() {
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
         super.init()
         fetchLocationForecast()
     }
@@ -23,7 +27,7 @@ class HomeViewModel: BaseViewModel {
     /// Fetch locationForecast from API
     func fetchLocationForecast() {
         locationForecast = .loading
-        locationForecastManager.fetchLocationForecast(latitude: "27.7172", longitude: "85.3240")  ///TODO Static latitude, longitude for now
+        locationForecastManager.fetchLocationForecast(latitude: "\(latitude ?? 0)", longitude: "\(longitude ?? 0)")
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

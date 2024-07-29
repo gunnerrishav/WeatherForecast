@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DetailView.swift
 //  WeatherForecast
 //
 //  Created by Rishab Maharjan on 28/07/2024.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DetailView: View {
+    
     var body: some View {
-        Text("")
+        Text("Detail View")
     }
 }
 
 #Preview {
-    ContentView()
+    DetailView()
 }

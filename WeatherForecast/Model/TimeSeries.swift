@@ -11,6 +11,11 @@ struct TimeSeries: Codable {
     let time: String?
     let data: TimeSeriesData?
     
+    func getFormattedDate() -> String {
+        let formattedDate = DateTimeUtils.getFormattedDateFromInputDate(date: time ?? "", inputFormat: DateTimeFormats.yyyyMMddTHHmmSSZ.rawValue, outputFormat: DateTimeFormats.EEEddMMMyyyy.rawValue)
+        return formattedDate
+    }
+    
     enum CodingKeys: String, CodingKey {
         case time
         case data
