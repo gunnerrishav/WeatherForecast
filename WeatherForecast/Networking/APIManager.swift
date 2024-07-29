@@ -21,10 +21,6 @@ class APIManager {
             request.httpMethod = HTTPMethod.get.identifier
             return URLSession.shared.dataTaskPublisher(for: request)
                 .tryMap { output in
-                    guard let httpResponse = output.response as? HTTPURLResponse else {
-                        throw URLError(.badServerResponse)
-                    }
-                    
                     
                     return (try JSONDecoder().decode(T.self, from: output.data))
                 }
